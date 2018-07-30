@@ -16,14 +16,14 @@
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="index.html">UFO Sightings
-            <img class="nav-ufo" src="mgarza/github/static/images/ufo.svg">
+            <img class="nav-ufo" src="static/images/ufo.svg">
           </a>
         </div>
       </div>
     </nav>
     <div class="hero text-center">
       <h1>UFO Sightings</h1>
-      <p>The Truth is Out There</p>
+      <p>The Truth is Above Us</p>
     </div>
     <div class="container">
       <div class="row margin-top-50">
@@ -37,7 +37,13 @@
                     <ul class="list-group" id="filters">
                       <li class="filter list-group-item">
                         <label for="date">Enter a Date</label>
-                        <input class="form-control" id="datetime" type="text" placeholder="1/11/2011">
+                        <input class="form-control" id="datetime" type="text" placeholder="dd/mm/yyyy">
+                        <label>Enter a City</label>
+                        <input type="text" class="form-control" id="city" placeholder="e.g., Austin">
+                        <label>Enter a State</label>
+                        <input type="text" class="form-control" id="state" placeholder="e.g., TX">
+                        <label>Enter a Country</label>
+                        <input type="text" class="form-control" id="country" placeholder="e.g., US">
                       </li>
                     </ul>
                   </div>
@@ -52,13 +58,13 @@
             <table id="ufo-table" class="table table-striped">
               <thead>
                 <tr>
-                  <th class="table-head">Date</th>
+                  <!-- <th class="table-head">Date</th>
                   <th class="table-head">City</th>
                   <th class="table-head">State</th>
                   <th class="table-head">Country</th>
                   <th class="table-head">Shape</th>
                   <th class="table-head">Duration</th>
-                  <th class="table-head">Comments</th>
+                  <th class="table-head">Comments</th> -->
                 </tr>
               </thead>
               <tbody></tbody>
@@ -77,3 +83,4 @@
 </body>
 
 </html>
+
