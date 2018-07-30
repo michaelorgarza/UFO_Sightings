@@ -98,7 +98,7 @@ select {
   padding: 20px;
   margin: 0;
   background: black;
-  background-image: url("../images/nasa.jpg");
+  background-image: url("https://i.ytimg.com/vi/HnEmdnW99o0/maxresdefault.jpg");
   background-attachment: fixed;
   background-position: bottom center;
   background-size: cover;
@@ -107,12 +107,14 @@ select {
 .hero h1 {
   margin-top: 200px;
   font-size: 0.1rem;
+  color: white;
   animation: title 1.2s forwards linear;
 }
 
 .hero p {
   font-size: 2rem;
   opacity: 0;
+  color: red;
   animation: subtitle 1.2s forwards linear;
   animation-delay: 1.2s;
 }
