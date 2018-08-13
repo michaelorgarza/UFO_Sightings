@@ -1,41 +1,41 @@
-//---------------------------------------------------
-// filter block
-var sighting = data;
+// //---------------------------------------------------
+// // filter block
+// var sighting = data;
 
-// Select the submit button
-var submit = d3.select("#filter-btn");
+// // Select the submit button
+// var submit = d3.select("#filter-btn");
 
-submit.on("click", function() {
+// submit.on("click", function() {
 
-  // Prevent the page from refreshing
-  d3.event.preventDefault();
+//   // Prevent the page from refreshing
+//   d3.event.preventDefault();
 
-  // Select the input element and get the raw HTML node
-  var inputElement = d3.select("#datetime-input");
+//   // Select the input element and get the raw HTML node
+//   var inputElement = d3.select("#datetime-input");
 
-  // Get the value property of the input element
-  var inputValue = inputElement.property("value");
+//   // Get the value property of the input element
+//   var inputValue = inputElement.property("value");
 
-  console.log(inputValue);
-  console.log(sighting);
+//   console.log(inputValue);
+//   console.log(sighting);
 
-  var filteredData = sighting.filter(sighting => sighting.datetime === inputValue);
+//   var filteredData = sighting.filter(sighting => sighting.datetime === inputValue);
 
-  console.log(filteredData);
+//   console.log(filteredData);
 
   
 
-  // BONUS: Calculate summary statistics for the age field of the filtered data
+//   // BONUS: Calculate summary statistics for the age field of the filtered data
 
-  // First, create an array with just the age values
-  var dated = filteredData
+//   // First, create an array with just the age values
+//   var dated = filteredData
 
 
 
-  // Finally, add the summary stats to the `ul` tag
-  d3.select(".ufo-table")
-    .append("tr").text(`Date: ${dated}`)
-});
+//   // Finally, add the summary stats to the `ul` tag
+//   d3.select(".ufo-table")
+//     .append("tr").text(`Date: ${dated}`)
+// });
 
 
 
@@ -125,8 +125,8 @@ if (sDate){
     sDate = newDate
 }
 console.log("date:" + sDate)
-// var sCity = $cityI.value.replace(/[^0-9a-z]/gi, '').trim().toLowerCase();
-// console.log("city: " + sCity)
+var sCity = $cityI.value.replace(/[^0-9a-z]/gi, '').trim().toLowerCase();
+console.log("city: " + sCity)
 // var sState = $stateI.value.replace(/[^0-9a-z]/gi, '').trim().toLowerCase();
 // console.log("state: " + sState)
 // var sCountry = $countryI.value.trim().toLowerCase();
@@ -145,8 +145,8 @@ console.log("date:" + sDate)
 tableData = data.filter(function(record) {
     var mDate = record.datetime.substring(0, sDate.length)
 
-    // var mCity = record.city.replace(/[^0-9a-z]/gi, '').substring(0, sCity.length).toLowerCase().trim();
-    // var pCity = mCity.indexOf(sCity) ///partial match
+    var mCity = record.city.replace(/[^0-9a-z]/gi, '').substring(0, sCity.length).toLowerCase().trim();
+    var pCity = mCity.indexOf(sCity) ///partial match
 
     // var mfState = record.stateName.replace(/[^0-9a-z]/gi, '').substring(0, sState.length).toLowerCase().trim();
     // var mStateAbb = record.state.replace(/[^0-9a-z]/gi, '').substring(0, sState.length).toLowerCase().trim();
@@ -155,10 +155,11 @@ tableData = data.filter(function(record) {
     // var mShape = record.shape.substring(0, sShape.length).toLowerCase().trim();
 
     if (mDate === sDate && 
-        ((mCity === sCity) || (pCity > -1)) &&
-        ((mStateAbb === sState) || (mfState === sState) || (pState > -1)) &&
-        mCountry === sCountry &&
-        mShape === sShape)
+        ((mCity === sCity) || (pCity > -1)))
+        // &&
+        // ((mStateAbb === sState) || (mfState === sState) || (pState > -1)) &&
+        // mCountry === sCountry &&
+        // mShape === sShape)
     {
     return true;
     }
@@ -178,7 +179,7 @@ tableData = data.filter(function(record) {
 renderTable(begin, end);
 
 $datetime_input.value = ""
-// $cityI.value = ""
+$cityI.value = ""
 // $stateI.value = ""
 // $countryI.selectedIndex = 'All'
 // $shapeI.selectedIndex = 'All'
